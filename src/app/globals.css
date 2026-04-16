@@ -3,26 +3,34 @@
    Warm, minimal, premium journal aesthetic
 ───────────────────────────────────── */
 :root {
-  /* Brand */
-  --bg:        #FFF3E6;
-  --bg-alt:    #FFF8F0;
-  --surface:   #FFFFFF;
-  --border:    #EDE0D4;
-  --border-lt: #F5EBE0;
+  /* Brand Colors */
+  --bg:          #FDFAF4;
+  --white:       #FFFFFF;
+  --border:      #E8E2D9;
+  --text:        #1C1917;
+  --mid:         #78716C;
+  --light:       #A8A29E;
+  --orange:      #F06A2E;
+  --orange-dark: #C9521A;
+  --orange-bg:   #FFF3EB;
+  --orange-bg2:  #FFE0C8;
+  --purple:      #7C5CFC;
+  --purple-bg:   #F0EEFF;
+  --yellow:      #F5C842;
+  --yellow-bg:   #FFFAEB;
+  --green:       #16A34A;
+  --green-bg:    #ECFDF5;
 
-  /* Text */
-  --text:      #1C1C1C;
-  --sub:       #6B6260;
-  --faint:     #A09590;
-
-  /* Accent */
-  --orange:    #FF7A45;
-  --orange-lt: #FFF0E8;
-  --orange-dk: #E05A25;
-  --purple:    #7C6CF2;
-  --purple-lt: #F0EEFF;
-  --green:     #22C55E;
-  --green-lt:  #F0FDF4;
+  /* Semantic Aliases for Components */
+  --bg-alt:    var(--yellow-bg);
+  --surface:   var(--white);
+  --border-lt: var(--border);
+  --sub:       var(--mid);
+  --faint:     var(--light);
+  --orange-lt: var(--orange-bg);
+  --orange-dk: var(--orange-dark);
+  --purple-lt: var(--purple-bg);
+  --green-lt:  var(--green-bg);
 
   /* Radius */
   --r-sm: 10px;

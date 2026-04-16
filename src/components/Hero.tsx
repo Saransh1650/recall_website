@@ -14,8 +14,8 @@ export default function Hero() {
 
         {/* Headline */}
         <h1 className={styles.headline}>
-          Stop losing the conversations<br />
-          <span className={styles.grad}>that matter.</span>
+          Be present.<br />
+          We&apos;ll <span className={styles.crayonWrap}>remember.</span>
         </h1>
 
         <p className={styles.sub}>
