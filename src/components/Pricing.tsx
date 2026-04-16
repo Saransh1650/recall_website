@@ -14,7 +14,7 @@ const plans = [
       "5 AI questions / month",
       "Photo attachments"
     ],
-    buttonText: "Get started free",
+    buttonText: "Join Waitlist",
   },
   {
     tier: "Pro",
@@ -32,7 +32,7 @@ const plans = [
       "Export to PDF / Epub",
       "Life Chapters"
     ],
-    buttonText: "Start free trial",
+    buttonText: "Join Waitlist",
   },
   {
     tier: "Lifetime",
@@ -46,7 +46,7 @@ const plans = [
       "Pay once, use forever",
       "All future features included"
     ],
-    buttonText: "Get lifetime access",
+    buttonText: "Join Waitlist",
   }
 ];
 
@@ -86,7 +86,7 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a href="#" className={styles.btn}>{plan.buttonText}</a>
+              <a href="#waitlist" className={styles.btn}>{plan.buttonText}</a>
             </div>
           ))}
         </div>

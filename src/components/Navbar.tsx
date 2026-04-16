@@ -36,8 +36,9 @@ export default function Navbar() {
       
       <div className={styles.actions}>
         <Link href="#" className={`${styles.btn} styles.btnGhost`}>Log in</Link>
-        <Link href="#" className={`${styles.btn} ${styles.btnPrimary}`}>Get the app →</Link>
+        <Link href="#waitlist" className={`${styles.btn} ${styles.btnPrimary}`}>Join Waitlist →</Link>
       </div>
+
     </nav>
   );
 }
