@@ -36,8 +36,10 @@ export default function Home() {
         </div>
 
         <Privacy />
-        <Pricing />
-        <CTA />
+        <div style={{ background: 'linear-gradient(180deg, var(--bg) 0%, var(--purple-bg) 100%)' }}>
+          <Pricing />
+          <CTA />
+        </div>
       </main>
       <Footer />
     </>
