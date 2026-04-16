@@ -1,5 +1,4 @@
 'use client';
-
 import { useEffect } from 'react';
 
 export default function ScrollReveal() {
@@ -8,31 +7,34 @@ export default function ScrollReveal() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const target = entry.target as HTMLElement;
-            target.style.opacity = '1';
-            target.style.transform = 'translateY(0)';
+            const el = entry.target as HTMLElement;
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+            observer.unobserve(el);
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.12 }
     );
 
-    // Dynamic selection based on the classes we used in components
     const selectors = [
-      '[class*="Features_card"]',
-      '[class*="HowItWorks_step"]',
-      '[class*="Personas_persona"]',
       '[class*="Pricing_card"]',
-      '[class*="Privacy_feature"]'
+      '[class*="Privacy_card"]',
+      '[class*="Sections_card"]',
+      '[class*="Sections_recCard"]',
+      '[class*="Sections_aiCard"]',
+      '[class*="Sections_journalFull"]',
+      '[class*="Sections_peopleCard"]',
+      '[class*="Sections_searchCard"]',
     ];
 
     const elements = document.querySelectorAll(selectors.join(', '));
     elements.forEach((el) => {
       const target = el as HTMLElement;
       target.style.opacity = '0';
-      target.style.transform = 'translateY(20px)';
-      target.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
-      observer.observe(el);
+      target.style.transform = 'translateY(24px)';
+      target.style.transition = 'opacity 0.65s ease, transform 0.65s ease';
+      observer.observe(target);
     });
 
     return () => observer.disconnect();

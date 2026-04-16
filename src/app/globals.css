@@ -1,84 +1,137 @@
+/* ─────────────────────────────────────
+   RECALL — Design System v2
+   Warm, minimal, premium journal aesthetic
+───────────────────────────────────── */
 :root {
-  --bg: #FDFAF4;
-  --white: #FFFFFF;
-  --border: #E8E2D9;
-  --text: #1C1917;
-  --mid: #78716C;
-  --light: #A8A29E;
-  --orange: #F06A2E;
-  --orange-dark: #C9521A;
-  --orange-bg: #FFF3EB;
-  --orange-bg2: #FFE0C8;
-  --purple: #7C5CFC;
-  --purple-bg: #F0EEFF;
-  --yellow: #F5C842;
-  --yellow-bg: #FFFAEB;
-  --green: #16A34A;
-  --green-bg: #ECFDF5;
-  --r-sm: 12px;
-  --r-md: 20px;
-  --r-lg: 28px;
-  --r-xl: 48px;
+  /* Brand */
+  --bg:        #FFF3E6;
+  --bg-alt:    #FFF8F0;
+  --surface:   #FFFFFF;
+  --border:    #EDE0D4;
+  --border-lt: #F5EBE0;
+
+  /* Text */
+  --text:      #1C1C1C;
+  --sub:       #6B6260;
+  --faint:     #A09590;
+
+  /* Accent */
+  --orange:    #FF7A45;
+  --orange-lt: #FFF0E8;
+  --orange-dk: #E05A25;
+  --purple:    #7C6CF2;
+  --purple-lt: #F0EEFF;
+  --green:     #22C55E;
+  --green-lt:  #F0FDF4;
+
+  /* Radius */
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-xl: 40px;
 }
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--bg);
   color: var(--text);
+  font-family: 'Inter', 'SF Pro Display', system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
   line-height: 1.15;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { cursor: pointer; font-family: inherit; }
+
+/* ── Shared Container ── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-ul {
-  list-style: none;
+/* ── Section wrapper ── */
+.section {
+  padding: 7rem 1.5rem;
 }
 
-/* Animations */
+/* ── Section label (eyebrow) ── */
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  background: var(--orange-lt);
+  border: 1px solid rgba(255, 122, 69, 0.18);
+  padding: 0.3rem 0.875rem;
+  border-radius: 100px;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Gradient text utility ── */
+.grad {
+  background: linear-gradient(135deg, var(--orange) 0%, var(--purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Shared Animations ── */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-9px); }
+  50%       { transform: translateY(-8px); }
 }
 
 @keyframes float2 {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50%       { transform: translateY(-5px); }
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.4); opacity: 0.6; }
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.3); }
 }
 
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.f1 { animation: float 4s ease-in-out infinite; }
-.f2 { animation: float2 5s ease-in-out infinite 0.7s; }
-.f3 { animation: float 4.5s ease-in-out infinite 1.2s; }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes waveform {
+  0%, 100% { transform: scaleY(0.3); }
+  50%       { transform: scaleY(1); }
+}
+
+/* ── ScrollReveal utility ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

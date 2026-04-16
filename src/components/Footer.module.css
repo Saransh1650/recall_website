@@ -1,105 +1,44 @@
 .footer {
-  background: var(--text);
-  color: white;
-  padding: 4rem 1.5rem 2rem;
+  border-top: 1px solid var(--border-lt);
+  padding: 3rem 1.5rem;
+  background: var(--bg);
 }
 
 .inner {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-}
-
-.top {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 3rem;
-  padding-bottom: 3rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 2rem;
-}
-
-.brand p {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.45);
-  margin-top: 1rem;
-  line-height: 1.7;
-  max-width: 260px;
-  font-family: var(--font-dm-sans), sans-serif;
-}
-
-.colTitle {
-  font-family: var(--font-plus-jakarta), sans-serif;
-  font-weight: 700;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.35);
-  margin-bottom: 1rem;
-}
-
-.links {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.links a {
-  color: rgba(255, 255, 255, 0.6);
-  text-decoration: none;
-  font-size: 0.875rem;
-  transition: color 0.2s;
-  font-family: var(--font-dm-sans), sans-serif;
-}
-
-.links a:hover {
-  color: white;
-}
-
-.bottom {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.3);
-  font-family: var(--font-dm-sans), sans-serif;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
+
+.brand { flex: 1; }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-plus-jakarta), sans-serif;
+  font-size: 1rem;
   font-weight: 800;
-  font-size: 1.15rem;
-  color: white;
-  text-decoration: none;
+  color: var(--text);
   letter-spacing: -0.02em;
 }
 
-.logoMark {
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
-  background: var(--orange);
+.tagline {
+  font-size: 0.8rem;
+  color: var(--faint);
+  margin-top: 4px;
+}
+
+.links {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 1.75rem;
+  font-size: 0.875rem;
+  color: var(--sub);
 }
 
-@media (max-width: 900px) {
-  .top {
-    grid-template-columns: 1fr 1fr;
-  }
-}
+.links a:hover { color: var(--text); }
 
-@media (max-width: 500px) {
-  .top {
-    grid-template-columns: 1fr;
-  }
-  .bottom {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-  }
+.copy {
+  font-size: 0.8rem;
+  color: var(--faint);
+  width: 100%;
 }
