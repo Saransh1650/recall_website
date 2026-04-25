@@ -503,7 +503,6 @@
 .searchQuery {
   font-size: 14px;
   color: var(--text);
-  flex: 1;
 }
 
 .searchCursor {
@@ -512,6 +511,7 @@
   background: var(--orange);
   display: block;
   animation: blink 1s step-end infinite;
+  margin-left: -8px;
 }
 
 @keyframes blink {
