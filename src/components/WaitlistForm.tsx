@@ -1,14 +1,29 @@
 'use client';
 import { useState } from 'react';
 import styles from './WaitlistForm.module.css';
+import { addToWaitlist } from '@/lib/waitlist';
 
 export default function WaitlistForm() {
   const [email, setEmail] = useState('');
   const [done, setDone] = useState(false);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (email) setDone(true);
+    if (!email) return;
+
+    setLoading(true);
+    setError('');
+    try {
+      await addToWaitlist(email);
+      setDone(true);
+    } catch (err) {
+      setError('Failed to join waitlist. Please try again.');
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (done) {
@@ -21,18 +36,22 @@ export default function WaitlistForm() {
   }
 
   return (
-    <form onSubmit={submit} className={styles.form}>
-      <input
-        type="email"
-        required
-        placeholder="your@email.com"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-        className={styles.input}
-      />
-      <button type="submit" className={styles.btn}>
-        Join Waitlist
-      </button>
-    </form>
+    <>
+      <form onSubmit={submit} className={styles.form}>
+        <input
+          type="email"
+          required
+          placeholder="your@email.com"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          className={styles.input}
+          disabled={loading}
+        />
+        <button type="submit" className={styles.btn} disabled={loading}>
+          {loading ? 'Joining...' : 'Join Waitlist'}
+        </button>
+      </form>
+      {error && <div className={styles.error}>{error}</div>}
+    </>
   );
 }

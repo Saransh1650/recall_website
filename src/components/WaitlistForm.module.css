@@ -39,9 +39,21 @@
   font-family: inherit;
 }
 
-.btn:hover {
+.btn:hover:not(:disabled) {
   background: #333;
   transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  text-align: center;
 }
 
 .success {

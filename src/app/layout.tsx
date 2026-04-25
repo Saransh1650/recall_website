@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
 import "./globals.css";
+import { FirebaseProvider } from "@/components/FirebaseProvider";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -15,6 +16,9 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "RECALL — Be Present. We'll Remember.",
   description: "RECALL listens to your conversations and turns them into beautiful journal entries.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
@@ -25,7 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${plusJakartaSans.variable} ${dmSans.variable}`}>
-        {children}
+        <FirebaseProvider>
+          {children}
+        </FirebaseProvider>
       </body>
     </html>
   );
