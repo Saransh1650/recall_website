@@ -1,3 +1,4 @@
+import { Zap } from 'lucide-react';
 import styles from './Personas.module.css';
 
 const personas = [
@@ -35,7 +36,10 @@ export default function Personas() {
   return (
     <section className={styles.section}>
       <div className={styles.center}>
-        <div className={styles.label}>✦ Who it&apos;s for</div>
+        <div className={styles.label}>
+          <Zap size={16} style={{ display: 'inline', marginRight: '6px' }} />
+          Who it&apos;s for
+        </div>
         <h2 className={styles.title}>Built for real moments,<br />not boardrooms</h2>
         <p className={styles.sub}>RECALL is for anyone whose mind has ever drifted during a conversation that mattered.</p>
       </div>

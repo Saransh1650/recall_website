@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { CheckCircle2 } from 'lucide-react';
 import styles from './WaitlistForm.module.css';
 import { addToWaitlist } from '@/lib/waitlist';
 
@@ -29,7 +30,7 @@ export default function WaitlistForm() {
   if (done) {
     return (
       <div className={styles.success}>
-        <span className={styles.successIcon}>✓</span>
+        <CheckCircle2 size={20} className={styles.successIcon} />
         <span>You&apos;re on the list! We&apos;ll be in touch.</span>
       </div>
     );

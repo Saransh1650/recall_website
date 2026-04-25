@@ -1,3 +1,4 @@
+import { Zap } from 'lucide-react';
 import styles from './Features.module.css';
 
 const features = [
@@ -61,7 +62,10 @@ export default function Features() {
   return (
     <section id="features" className={styles.section}>
       <div className={styles.center}>
-        <div className={styles.label}>✦ Features</div>
+        <div className={styles.label}>
+          <Zap size={16} style={{ display: 'inline', marginRight: '6px' }} />
+          Features
+        </div>
         <h2 className={styles.title}>Everything your memory<br />wishes it had</h2>
         <p className={styles.sub}>Built around your life, not your meetings.</p>
       </div>
